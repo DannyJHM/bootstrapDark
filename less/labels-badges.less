@@ -6,14 +6,14 @@
 // Base classes
 .label,
 .badge {
-  font-size: @baseFontSize * .846;
+  font-size: @baseFontSize * .8;
   font-weight: bold;
-  line-height: 14px; // ensure proper line-height if floated
+  line-height: 15px; // ensure proper line-height if floated
   color: @white;
   vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  background-color: @grayLight;
+  background-color: @lbDefault;
 }
 // Set unique padding and border-radii
 .label {
@@ -40,20 +40,20 @@ a {
 .label,
 .badge {
   // Important (red)
-  &-important         { background-color: @errorText; }
-  &-important[href]   { background-color: darken(@errorText, 10%); }
+  &-important         { background-color: @lbImportant; }
+  &-important[href]   { background-color: darken(@lbImportant, 10%); }
   // Warnings (orange)
-  &-warning           { background-color: @orange; }
-  &-warning[href]     { background-color: darken(@orange, 10%); }
+  &-warning           { background-color: @lbWarning; }
+  &-warning[href]     { background-color: darken(@lbWarning, 10%); }
   // Success (green)
-  &-success           { background-color: @successText; }
-  &-success[href]     { background-color: darken(@successText, 10%); }
+  &-success           { background-color: @lbSuccess; }
+  &-success[href]     { background-color: darken(@lbSuccess, 10%); }
   // Info (turquoise)
-  &-info              { background-color: @infoText; }
-  &-info[href]        { background-color: darken(@infoText, 10%); }
+  &-info              { background-color: @lbInfo; }
+  &-info[href]        { background-color: darken(@lbInfo, 10%); }
   // Inverse (black)
-  &-inverse           { background-color: @grayDark; }
-  &-inverse[href]     { background-color: darken(@grayDark, 10%); }
+  &-inverse           { background-color: @lbInverse; }
+  &-inverse[href]     { background-color: darken(@lbInverse, 10%); }
 }
 
 // Quick fix for labels/badges in buttons

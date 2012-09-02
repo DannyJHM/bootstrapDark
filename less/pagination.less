@@ -31,7 +31,7 @@
 .pagination a:hover,
 .pagination .active a,
 .pagination .active span {
-  background-color: #f5f5f5;
+  background-color: @paginationActiveBackground;
 }
 .pagination .active a,
 .pagination .active span {
@@ -42,7 +42,7 @@
 .pagination .disabled a,
 .pagination .disabled a:hover {
   color: @grayLight;
-  background-color: transparent;
+  background-color: @paginationDisabledBackground;
   cursor: default;
 }
 .pagination li:first-child a,

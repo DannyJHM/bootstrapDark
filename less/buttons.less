@@ -131,29 +131,36 @@
   // reset here as of 2.0.3 due to Recess property order
   border-color: #c5c5c5;
   border-color: rgba(0,0,0,.15) rgba(0,0,0,.15) rgba(0,0,0,.25);
+  color: @black !important;
 }
 .btn-primary {
   .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  color: @white !important;
 }
 // Warning appears are orange
 .btn-warning {
   .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+  color: @white !important;
 }
 // Danger and error appear as red
 .btn-danger {
   .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+  color: @white !important;
 }
 // Success appears as green
 .btn-success {
   .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+  color: @white !important;
 }
 // Info appears as a neutral blue
 .btn-info {
   .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+  color: @white !important;
 }
 // Inverse appears as dark gray
 .btn-inverse {
   .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+  color: @white !important;
 }
 
 
@@ -201,11 +208,11 @@ input[type="submit"].btn {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: @linkColor;
+  color: @linkColor !important;
   .border-radius(0);
 }
 .btn-link:hover {
-  color: @linkColorHover;
+  color: @linkColorHover !important;
   text-decoration: underline;
   background-color: transparent;
 }

@@ -25,14 +25,14 @@ legend {
   margin-bottom: @baseLineHeight;
   font-size: @baseFontSize * 1.5;
   line-height: @baseLineHeight * 2;
-  color: @grayDark;
+  color: @textColor;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid lighten(@bodyBackground, 15%);
 
   // Small
   small {
     font-size: @baseLineHeight * .75;
-    color: @grayLight;
+    color: @textColor;
   }
 }
 
@@ -84,7 +84,7 @@ input[type="color"],
   margin-bottom: 9px;
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
-  color: @gray;
+  color: @grayLight;
   .border-radius(@inputBorderRadius);
 }
 
@@ -122,10 +122,10 @@ input[type="color"],
 
   // Focus state
   &:focus {
-    border-color: rgba(82,168,236,.8);
+    border-color: @formBorderColor;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
-    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{formGlowColor}");
   }
 }
 
@@ -161,7 +161,7 @@ input[type="file"] {
 // Make select elements obey height by applying a border
 select {
   width: 220px; // default input width + 10px of padding that doesn't get applied
-  border: 1px solid #bbb;
+  border: 1px solid @inputBorder;
   background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
 }
 
@@ -339,15 +339,15 @@ input[type="checkbox"][readonly] {
 
 // Warning
 .control-group.warning {
-  .formFieldState(@warningText, @warningText, @warningBackground);
+  .formFieldState(lighten(@warningText, 30%), lighten(@warningText, 30%), lighten(@warningBackground, 30%));
 }
 // Error
 .control-group.error {
-  .formFieldState(@errorText, @errorText, @errorBackground);
+  .formFieldState(lighten(@errorText, 30%), lighten(@errorText, 30%), lighten(@errorBackground, 30%));
 }
 // Success
 .control-group.success {
-  .formFieldState(@successText, @successText, @successBackground);
+  .formFieldState(lighten(@successText, 30%), lighten(@successText, 30%), lighten(@successBackground, 30%));
 }
 
 // HTML5 invalid states
@@ -373,7 +373,7 @@ select:focus:required:invalid {
   margin-top: @baseLineHeight;
   margin-bottom: @baseLineHeight;
   background-color: @formActionsBackground;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid lighten(@bodyBackground, 15%);
   .clearfix(); // Adding clearfix to allow for .pull-right button containers
 }
 
@@ -435,9 +435,9 @@ select:focus:required:invalid {
     font-weight: normal;
     line-height: @baseLineHeight;
     text-align: center;
-    text-shadow: 0 1px 0 @white;
-    background-color: @grayLighter;
-    border: 1px solid #ccc;
+    text-shadow: 0 1px 0 @black;
+    background-color: @inputBackground;
+    border: 1px solid @inputBorder;
   }
   .add-on,
   .btn {
